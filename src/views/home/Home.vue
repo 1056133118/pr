@@ -1,6 +1,6 @@
 <template>
   <div id="Home">
-    <el-button type="info" @click="logout">退出</el-button>
+    <el-button type="info" @click="logout">退出,hahah</el-button>
   </div>
 </template>
 
