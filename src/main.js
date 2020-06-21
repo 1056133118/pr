@@ -13,6 +13,17 @@ Vue.use(ElementUI)
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 axios.defaults.headers.post['Content-Type'] =
   'application/x-www-form-urlencoded;charset=UTF-8'
+
+axios.interceptors.request.use(
+  (config) => {
+    config.headers.Authorization = window.sessionStorage.getItem('token')
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
+
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
